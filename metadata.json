@@ -1,0 +1,6 @@
+{
+  "name": "Main House — Galería de Proyectos",
+  "description": "Galería web privada y de solo lectura de proyectos y fotografías para MAIN HOUSE Casas Prefabricadas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

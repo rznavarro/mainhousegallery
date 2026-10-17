@@ -1,0 +1,44 @@
+[
+  {
+    "archivo": "exteriores/modelo-141-principal.jpg",
+    "titulo": "Fachada Principal y Terraza al Atardecer",
+    "categoria": "exteriores",
+    "proyecto": "Modelo 141 m²",
+    "fecha": "2026-03-12"
+  },
+  {
+    "archivo": "interiores/modelo-141-living-comedor.jpg",
+    "titulo": "Salón Comedor con Vigas a la Vista y Cocina Integrada",
+    "categoria": "interiores",
+    "proyecto": "Modelo 141 m²",
+    "fecha": "2026-03-14"
+  },
+  {
+    "archivo": "detalles/modelo-141-encuentro-madera-aluminio.jpg",
+    "titulo": "Encuentro Carpintería Aluminio y Revestimiento Termotratado",
+    "categoria": "detalles",
+    "proyecto": "Modelo 141 m²",
+    "fecha": "2026-03-15"
+  },
+  {
+    "archivo": "obra/montaje-modulo-a3.jpg",
+    "titulo": "Montaje en Grúa de Módulo Estructural sobre Cimentación",
+    "categoria": "obra",
+    "proyecto": "Modelo 141 m²",
+    "fecha": "2026-02-28"
+  },
+  {
+    "archivo": "aereas/residencia-valle-cubierta-verde.jpg",
+    "titulo": "Vista Aérea con Cubierta Vegetal y Piscina Integrada",
+    "categoria": "aereas",
+    "proyecto": "Residencia Valle 210 m²",
+    "fecha": "2026-04-02"
+  },
+  {
+    "archivo": "exteriores/modelo-98-patio-cubierto.jpg",
+    "titulo": "Módulo Compacto con Porche Cubierto y Paisajismo Seco",
+    "categoria": "exteriores",
+    "proyecto": "Modelo 98 m²",
+    "fecha": "2026-04-10"
+  }
+]
