@@ -37,6 +37,16 @@ function formatTitleFromFilename(filename: string): { titulo: string; proyecto: 
     };
   }
 
+  // Si proviene de WhatsApp ("WhatsApp Image 2026-10-18 at 9.37.47 PM")
+  if (clean.toLowerCase().includes('whatsapp image')) {
+    const timeMatch = clean.match(/at\s+([0-9.]+)\s*(am|pm)?/i);
+    const timeStr = timeMatch ? `(${timeMatch[1].replace(/\./g, ':')} ${timeMatch[2] || ''})`.trim() : '';
+    return {
+      titulo: `Casa Modular — Fotografía ${timeStr}`.trim(),
+      proyecto: 'Modelos de Casas'
+    };
+  }
+
   // Detectar modelo o metraje si existe (ej. 141m2, 98 m2, etc.)
   const m2Match = clean.match(/(\d+)\s*(m2|m²)/i);
   let proyecto = 'Casas Prefabricadas';
@@ -97,6 +107,22 @@ function scanFotosDirectory(): FotoMetadata[] {
 
   // Leer todos los directorios dentro de public/fotos
   if (fs.existsSync(FOTOS_DIR)) {
+    // Si se colocan imágenes directamente en la raíz de public/fotos, moverlas a casas/
+    const rootFiles = fs.readdirSync(FOTOS_DIR, { withFileTypes: true });
+    for (const rEntry of rootFiles) {
+      if (rEntry.isFile()) {
+        const ext = path.extname(rEntry.name).toLowerCase();
+        if (IMAGE_EXTENSIONS.has(ext)) {
+          try {
+            fs.renameSync(path.join(FOTOS_DIR, rEntry.name), path.join(FOTOS_DIR, 'casas', rEntry.name));
+            console.log(`[Auto-Organize] Movido ${rEntry.name} a /public/fotos/casas/`);
+          } catch (e) {
+            console.error('Error al mover archivo raíz a casas:', e);
+          }
+        }
+      }
+    }
+
     const entries = fs.readdirSync(FOTOS_DIR, { withFileTypes: true });
 
     for (const entry of entries) {
